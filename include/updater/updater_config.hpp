@@ -54,7 +54,8 @@ struct UpdaterConfig final : storage::IOConfig
                     ".osrm.fileIndex",
                     ".osrm.properties",
                     ".osrm.restrictions",
-                    ".osrm.enw"},
+                    ".osrm.enw",
+                    ".osrm.end"},
                    {},
                    {".osrm.datasource_names"}),
           valid_now(0)

@@ -472,6 +472,26 @@ void writeEdgeBasedNodeWeights(const boost::filesystem::path &path,
     storage::serialization::write(writer, "/extractor/edge_based_node_weights", weights);
 }
 
+template <typename NodeDurationsVectorT>
+void readEdgeBasedNodeDurations(const boost::filesystem::path &path,
+                                NodeDurationsVectorT &durations)
+{
+    const auto fingerprint = storage::tar::FileReader::VerifyFingerprint;
+    storage::tar::FileReader reader{path, fingerprint};
+
+    storage::serialization::read(reader, "/extractor/edge_based_node_durations", durations);
+}
+
+template <typename NodeDurationsVectorT>
+void writeEdgeBasedNodeDurations(const boost::filesystem::path &path,
+                                 const NodeDurationsVectorT &durations)
+{
+    const auto fingerprint = storage::tar::FileWriter::GenerateFingerprint;
+    storage::tar::FileWriter writer{path, fingerprint};
+
+    storage::serialization::write(writer, "/extractor/edge_based_node_durations", durations);
+}
+
 template <typename RTreeT>
 void writeRamIndex(const boost::filesystem::path &path, const RTreeT &rtree)
 {

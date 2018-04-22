@@ -63,6 +63,7 @@ struct ExtractorConfig final : storage::IOConfig
                                       ".osrm.turn_weight_penalties",
                                       ".osrm.turn_penalties_index",
                                       ".osrm.enw",
+                                      ".osrm.end",
                                       ".osrm.properties",
                                       ".osrm.icd",
                                       ".osrm.cnbg",
